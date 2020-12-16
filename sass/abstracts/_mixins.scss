@@ -27,12 +27,14 @@ $breakpoint arguement choices
 -tab-land
 -big-desktop
 
+order: base + typography > general layout + grid > page layout > components
+
 1em = 16px
 
 */
 
 @mixin respond($breakpoint) {
-    @if breakpoint==phone {
+    @if $breakpoint==phone {
         @media (max-width: 37.5em) {
             //600px
             @content
@@ -41,7 +43,7 @@ $breakpoint arguement choices
         ;
     }
 
-    @if breakpoint==tab-port {
+    @if $breakpoint==tab-port {
         @media (max-width: 56.25em) {
             //900px
             @content
@@ -50,7 +52,7 @@ $breakpoint arguement choices
         ;
     }
 
-    @if breakpoint==tab-land {
+    @if $breakpoint==tab-land {
         @media (max-width: 75em) {
             //1200px
             @content
@@ -59,8 +61,8 @@ $breakpoint arguement choices
         ;
     }
 
-    @if breakpoint==big-desktop {
-        @media (max-width: 112.5em) {
+    @if $breakpoint==big-desktop {
+        @media (min-width: 112.5em) {
             // 1800px
             @content
         }

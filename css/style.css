@@ -1,3 +1,22 @@
+/* 
+
+0 - 600px       phone
+600 - 900px     tablet portrait
+900 - 1200px    tablet landscape
+1200-1800px     desktop
+1800px +        big desktop
+
+$breakpoint arguement choices
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+order: base + typography > general layout + grid > page layout > components
+
+1em = 16px
+
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -44,6 +63,30 @@
 
 html {
   font-size: 62.5%;
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 37.5em) {
+  html {
+    font-size: 37.5%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
 }
 
 body {
