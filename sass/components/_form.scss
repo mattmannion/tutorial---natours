@@ -16,12 +16,12 @@
         display: block;
         transition: all 0.3s;
 
-        &::-webkit-input-placeholder {
-            color: $color-grey-dark-2;
+        @include respond(tab-land) {
+            width: 70%;
         }
 
-        &:focus:invalid {
-            border-bottom: 3px solid $color-secondary-dark;
+        @include respond(tab-port) {
+            width: 100%;
         }
 
         &:focus {
@@ -29,7 +29,18 @@
             box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
             border-bottom: 3px solid $color-primary;
         }
+
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+
+        }
     }
+
+
 
     &__label {
         font-size: 1.2rem;
@@ -40,7 +51,7 @@
         transition: all 0.3s;
     }
 
-    &__input:placeholder-shown + &__label {
+    &__input:placeholder-shown+&__label {
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4rem);
@@ -49,6 +60,15 @@
     &__radio-group {
         width: 49%;
         display: inline-block;
+
+        @include respond(tab-land) {
+            width: 35%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
 
     &__radio-input {
@@ -88,7 +108,7 @@
         }
     }
 
-    &__radio-input:checked ~ &__radio-label &__radio-button:after {
+    &__radio-input:checked~&__radio-label &__radio-button:after {
         opacity: 1;
     }
 }
